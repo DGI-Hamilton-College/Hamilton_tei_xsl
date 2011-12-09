@@ -1,4 +1,3 @@
-
 <xsl:stylesheet xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xd="http://www.pnp-software.com/XSLTdoc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" exclude-result-prefixes="tei" version="2.0">
   <xsl:output doctype-public="-//W3C//DTD HTML 4.01 Strict//EN" doctype-system="http://www.w3.org/TR/html4/strict.dtd" encoding="utf-8" indent="yes" method="html" omit-xml-declaration="yes"></xsl:output>
   <xsl:template match="tei:TEI">
