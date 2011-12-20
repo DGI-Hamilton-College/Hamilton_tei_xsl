@@ -45,25 +45,25 @@
       <xsl:when test="descendant::tei:reg"> (<a>
           <xsl:attribute name="class">search persName</xsl:attribute>
           <xsl:attribute name="target">_blank</xsl:attribute>
-          <xsl:attribute name="href"><xsl:value-of select="concat($SEARCHURL, 'tei.surname%3A')"></xsl:value-of><xsl:value-of select="normalize-space(descendant::tei:reg)"></xsl:value-of>/-</xsl:attribute>
+          <xsl:attribute name="href"><xsl:value-of select="concat($SEARCHURL, 'tei.surname%3A%22')"></xsl:value-of><xsl:value-of select="normalize-space(descendant::tei:reg)"></xsl:value-of>%22/-</xsl:attribute>
           <xsl:value-of select="descendant::tei:reg"></xsl:value-of>
         </a>) </xsl:when>
       <xsl:when test="descendant::tei:corr"> (<a>
           <xsl:attribute name="class">search persName</xsl:attribute>
           <xsl:attribute name="target">_blank</xsl:attribute>
-          <xsl:attribute name="href"><xsl:value-of select="concat($SEARCHURL, 'tei.surname%3A')"></xsl:value-of><xsl:value-of select="normalize-space(descendant::tei:corr)"></xsl:value-of>/-</xsl:attribute>
+          <xsl:attribute name="href"><xsl:value-of select="concat($SEARCHURL, 'tei.surname%3A%22')"></xsl:value-of><xsl:value-of select="normalize-space(descendant::tei:corr)"></xsl:value-of>%22/-</xsl:attribute>
           <xsl:value-of select="descendant::tei:corr"></xsl:value-of>
         </a>) </xsl:when>
       <xsl:when test="descendant::expan"> (<a>
           <xsl:attribute name="class">search persName</xsl:attribute>
           <xsl:attribute name="target">_blank</xsl:attribute>
-          <xsl:attribute name="href"><xsl:value-of select="concat($SEARCHURL, 'tei.surname%3A')"></xsl:value-of><xsl:value-of select="normalize-space(descendant::tei:expan)"></xsl:value-of>/-</xsl:attribute>
+          <xsl:attribute name="href"><xsl:value-of select="concat($SEARCHURL, 'tei.surname%3A%22')"></xsl:value-of><xsl:value-of select="normalize-space(descendant::tei:expan)"></xsl:value-of>%22/-</xsl:attribute>
           <xsl:value-of select="descendant::tei:expan"></xsl:value-of>
         </a>) </xsl:when>
       <xsl:otherwise> (<a>
           <xsl:attribute name="class">search persName</xsl:attribute>
           <xsl:attribute name="target">_blank</xsl:attribute>
-          <xsl:attribute name="href"><xsl:value-of select="concat($SEARCHURL, 'tei.surname%3A')"></xsl:value-of><xsl:value-of select="normalize-space(.)"></xsl:value-of>/-</xsl:attribute>
+          <xsl:attribute name="href"><xsl:value-of select="concat($SEARCHURL, 'tei.surname%3A%22')"></xsl:value-of><xsl:value-of select="normalize-space(.)"></xsl:value-of>%22/-</xsl:attribute>
           <xsl:value-of select="."></xsl:value-of>
         </a>) </xsl:otherwise>
     </xsl:choose>
@@ -75,7 +75,7 @@
 (<a>
           <xsl:attribute name="class">search placeName</xsl:attribute>
           <xsl:attribute name="target">_blank</xsl:attribute>
-          <xsl:attribute name="href"><xsl:value-of select="concat($SEARCHURL, 'tei.placeName%3A')"></xsl:value-of><xsl:value-of select="normalize-space(descendant::tei:choice/tei:reg)"></xsl:value-of>/-</xsl:attribute>
+          <xsl:attribute name="href"><xsl:value-of select="concat($SEARCHURL, 'tei.placeName%3A%22')"></xsl:value-of><xsl:value-of select="normalize-space(descendant::tei:choice/tei:reg)"></xsl:value-of>%22/-</xsl:attribute>
           <xsl:value-of select="descendant::tei:reg"></xsl:value-of>
         </a>)
       </xsl:when>
@@ -83,7 +83,7 @@
 (<a>
           <xsl:attribute name="class">search placeName</xsl:attribute>
           <xsl:attribute name="target">_blank</xsl:attribute>
-          <xsl:attribute name="href"><xsl:value-of select="concat($SEARCHURL, 'tei.placeName%3A')"></xsl:value-of><xsl:value-of select="normalize-space(descendant::tei:corr)"></xsl:value-of>/-</xsl:attribute>
+          <xsl:attribute name="href"><xsl:value-of select="concat($SEARCHURL, 'tei.placeName%3A%22')"></xsl:value-of><xsl:value-of select="normalize-space(descendant::tei:corr)"></xsl:value-of>%22/-</xsl:attribute>
           <xsl:value-of select="descendant::tei:corr"></xsl:value-of>
         </a>)
       </xsl:when>
@@ -91,7 +91,7 @@
 (<a>
           <xsl:attribute name="class">search placeName</xsl:attribute>
           <xsl:attribute name="target">_blank</xsl:attribute>
-          <xsl:attribute name="href"><xsl:value-of select="concat($SEARCHURL, 'tei.placeName%3A')"></xsl:value-of><xsl:value-of select="normalize-space(descendant::tei:expan)"></xsl:value-of>/-</xsl:attribute>
+          <xsl:attribute name="href"><xsl:value-of select="concat($SEARCHURL, 'tei.placeName%3A%22')"></xsl:value-of><xsl:value-of select="normalize-space(descendant::tei:expan)"></xsl:value-of>%22/-</xsl:attribute>
           <xsl:value-of select="descendant::tei:expan"></xsl:value-of>
         </a>)
       </xsl:when>
@@ -99,7 +99,7 @@
 (<a>
           <xsl:attribute name="class">search placeName</xsl:attribute>
           <xsl:attribute name="target">_blank</xsl:attribute>
-          <xsl:attribute name="href"><xsl:value-of select="concat($SEARCHURL, 'tei.placeName%3A')"></xsl:value-of><xsl:value-of select="normalize-space(.)"></xsl:value-of>/-</xsl:attribute>
+          <xsl:attribute name="href"><xsl:value-of select="concat($SEARCHURL, 'tei.placeName%3A%22')"></xsl:value-of><xsl:value-of select="normalize-space(.)"></xsl:value-of>%22/-</xsl:attribute>
           <xsl:value-of select="."></xsl:value-of>
         </a>)
 </xsl:otherwise>
@@ -112,7 +112,7 @@
 (<a>
           <xsl:attribute name="class">search orgName</xsl:attribute>
           <xsl:attribute name="target">_blank</xsl:attribute>
-          <xsl:attribute name="href"><xsl:value-of select="concat($SEARCHURL, 'tei.orgName%3A')"></xsl:value-of><xsl:value-of select="normalize-space(descendant::tei:choice/tei:reg)"></xsl:value-of>/-</xsl:attribute>
+          <xsl:attribute name="href"><xsl:value-of select="concat($SEARCHURL, 'tei.orgName%3A%22')"></xsl:value-of><xsl:value-of select="normalize-space(descendant::tei:choice/tei:reg)"></xsl:value-of>%22/-</xsl:attribute>
           <xsl:value-of select="descendant::tei:reg"></xsl:value-of>
         </a>)
       </xsl:when>
@@ -120,7 +120,7 @@
 (<a>
           <xsl:attribute name="class">search orgName</xsl:attribute>
           <xsl:attribute name="target">_blank</xsl:attribute>
-          <xsl:attribute name="href"><xsl:value-of select="concat($SEARCHURL, 'tei.orgName%3A')"></xsl:value-of><xsl:value-of select="normalize-space(descendant::tei:corr)"></xsl:value-of>/-</xsl:attribute>
+          <xsl:attribute name="href"><xsl:value-of select="concat($SEARCHURL, 'tei.orgName%3A%22')"></xsl:value-of><xsl:value-of select="normalize-space(descendant::tei:corr)"></xsl:value-of>%22/-</xsl:attribute>
           <xsl:value-of select="descendant::tei:corr"></xsl:value-of>
         </a>)
       </xsl:when>
@@ -128,7 +128,7 @@
 (<a>
           <xsl:attribute name="class">search orgName</xsl:attribute>
           <xsl:attribute name="target">_blank</xsl:attribute>
-          <xsl:attribute name="href"><xsl:value-of select="concat($SEARCHURL, 'tei.orgName%3A')"></xsl:value-of><xsl:value-of select="normalize-space(descendant::tei:expan)"></xsl:value-of>/-</xsl:attribute>
+          <xsl:attribute name="href"><xsl:value-of select="concat($SEARCHURL, 'tei.orgName%3A%22')"></xsl:value-of><xsl:value-of select="normalize-space(descendant::tei:expan)"></xsl:value-of>%22/-</xsl:attribute>
           <xsl:value-of select="descendant::tei:expan"></xsl:value-of>
         </a>)
       </xsl:when>
@@ -136,7 +136,7 @@
 (<a>
           <xsl:attribute name="class">search orgName</xsl:attribute>
           <xsl:attribute name="target">_blank</xsl:attribute>
-          <xsl:attribute name="href"><xsl:value-of select="concat($SEARCHURL, 'tei.orgName%3A')"></xsl:value-of><xsl:value-of select="normalize-space(.)"></xsl:value-of>/-</xsl:attribute>
+          <xsl:attribute name="href"><xsl:value-of select="concat($SEARCHURL, 'tei.orgName%3A%22')"></xsl:value-of><xsl:value-of select="normalize-space(.)"></xsl:value-of>%22/-</xsl:attribute>
           <xsl:value-of select="."></xsl:value-of>
         </a>)
 </xsl:otherwise>
