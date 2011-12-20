@@ -1,10 +1,13 @@
 <xsl:stylesheet xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xd="http://www.pnp-software.com/XSLTdoc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" exclude-result-prefixes="tei" version="2.0">
   <xsl:output doctype-public="-//W3C//DTD HTML 4.01 Strict//EN" doctype-system="http://www.w3.org/TR/html4/strict.dtd" encoding="utf-8" indent="yes" method="html" omit-xml-declaration="yes"></xsl:output>
+  
+  <xsl:variable name="SEARCHURL">http://dora-dev.hpc.hamilton.edu/islandora/solr/search/</xsl:variable>
+  
   <xsl:template match="tei:TEI">
     <html>
       <head>
         <title>
-          <xsl:value-of select="normalize-space(tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title)"></xsl:value-of>
+          <xsl:value-of select="normalize-space(tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title)"></xsl:value-of> 
         </title>
       </head>
       <body>
@@ -21,6 +24,7 @@
     <p>
       <xsl:apply-templates></xsl:apply-templates>
     </p>
+    
   </xsl:template>
   <xsl:template match="tei:date">
     <xsl:text> </xsl:text>
@@ -41,25 +45,25 @@
       <xsl:when test="descendant::tei:reg"> (<a>
           <xsl:attribute name="class">search persName</xsl:attribute>
           <xsl:attribute name="target">_blank</xsl:attribute>
-          <xsl:attribute name="href">http://www.islandlives.ca/islandora/solr/search/tei.surname%3A%22<xsl:value-of select="normalize-space(descendant::tei:reg)"></xsl:value-of>%22+AND+dc.type:collection/-</xsl:attribute>
+          <xsl:attribute name="href"><xsl:value-of select="concat($SEARCHURL, 'tei.surname%3A')"></xsl:value-of><xsl:value-of select="normalize-space(descendant::tei:reg)"></xsl:value-of>/-</xsl:attribute>
           <xsl:value-of select="descendant::tei:reg"></xsl:value-of>
         </a>) </xsl:when>
       <xsl:when test="descendant::tei:corr"> (<a>
           <xsl:attribute name="class">search persName</xsl:attribute>
           <xsl:attribute name="target">_blank</xsl:attribute>
-          <xsl:attribute name="href">http://www.islandlives.ca/islandora/solr/search/tei.surname%3A%22<xsl:value-of select="normalize-space(descendant::tei:corr)"></xsl:value-of>%22+AND+dc.type:collection/-</xsl:attribute>
+          <xsl:attribute name="href"><xsl:value-of select="concat($SEARCHURL, 'tei.surname%3A')"></xsl:value-of><xsl:value-of select="normalize-space(descendant::tei:corr)"></xsl:value-of>/-</xsl:attribute>
           <xsl:value-of select="descendant::tei:corr"></xsl:value-of>
         </a>) </xsl:when>
       <xsl:when test="descendant::expan"> (<a>
           <xsl:attribute name="class">search persName</xsl:attribute>
           <xsl:attribute name="target">_blank</xsl:attribute>
-          <xsl:attribute name="href">http://www.islandlives.ca/islandora/solr/search/tei.surname%3A%22<xsl:value-of select="normalize-space(descendant::tei:expan)"></xsl:value-of>%22+AND+dc.type:collection/-</xsl:attribute>
+          <xsl:attribute name="href"><xsl:value-of select="concat($SEARCHURL, 'tei.surname%3A')"></xsl:value-of><xsl:value-of select="normalize-space(descendant::tei:expan)"></xsl:value-of>/-</xsl:attribute>
           <xsl:value-of select="descendant::tei:expan"></xsl:value-of>
         </a>) </xsl:when>
       <xsl:otherwise> (<a>
           <xsl:attribute name="class">search persName</xsl:attribute>
           <xsl:attribute name="target">_blank</xsl:attribute>
-          <xsl:attribute name="href">http://www.islandlives.ca/islandora/solr/search/tei.surname%3A%22<xsl:value-of select="normalize-space(.)"></xsl:value-of>%22+AND+dc.type:collection/-</xsl:attribute>
+          <xsl:attribute name="href"><xsl:value-of select="concat($SEARCHURL, 'tei.surname%3A')"></xsl:value-of><xsl:value-of select="normalize-space(.)"></xsl:value-of>/-</xsl:attribute>
           <xsl:value-of select="."></xsl:value-of>
         </a>) </xsl:otherwise>
     </xsl:choose>
@@ -71,7 +75,7 @@
 (<a>
           <xsl:attribute name="class">search placeName</xsl:attribute>
           <xsl:attribute name="target">_blank</xsl:attribute>
-          <xsl:attribute name="href">http://www.islandlives.ca/islandora/solr/search/tei.placeName%3A%22<xsl:value-of select="normalize-space(descendant::tei:choice/tei:reg)"></xsl:value-of>%22+AND+dc.type:collection/-</xsl:attribute>
+          <xsl:attribute name="href"><xsl:value-of select="concat($SEARCHURL, 'tei.placeName%3A')"></xsl:value-of><xsl:value-of select="normalize-space(descendant::tei:choice/tei:reg)"></xsl:value-of>/-</xsl:attribute>
           <xsl:value-of select="descendant::tei:reg"></xsl:value-of>
         </a>)
       </xsl:when>
@@ -79,7 +83,7 @@
 (<a>
           <xsl:attribute name="class">search placeName</xsl:attribute>
           <xsl:attribute name="target">_blank</xsl:attribute>
-          <xsl:attribute name="href">http://www.islandlives.ca/islandora/solr/search/tei.placeName%3A%22<xsl:value-of select="normalize-space(descendant::tei:corr)"></xsl:value-of>%22+AND+dc.type:collection/-</xsl:attribute>
+          <xsl:attribute name="href"><xsl:value-of select="concat($SEARCHURL, 'tei.placeName%3A')"></xsl:value-of><xsl:value-of select="normalize-space(descendant::tei:corr)"></xsl:value-of>/-</xsl:attribute>
           <xsl:value-of select="descendant::tei:corr"></xsl:value-of>
         </a>)
       </xsl:when>
@@ -87,7 +91,7 @@
 (<a>
           <xsl:attribute name="class">search placeName</xsl:attribute>
           <xsl:attribute name="target">_blank</xsl:attribute>
-          <xsl:attribute name="href">http://www.islandlives.ca/islandora/solr/search/tei.placeName%3A%22<xsl:value-of select="normalize-space(descendant::tei:expan)"></xsl:value-of>%22+AND+dc.type:collection/-</xsl:attribute>
+          <xsl:attribute name="href"><xsl:value-of select="concat($SEARCHURL, 'tei.placeName%3A')"></xsl:value-of><xsl:value-of select="normalize-space(descendant::tei:expan)"></xsl:value-of>/-</xsl:attribute>
           <xsl:value-of select="descendant::tei:expan"></xsl:value-of>
         </a>)
       </xsl:when>
@@ -95,7 +99,7 @@
 (<a>
           <xsl:attribute name="class">search placeName</xsl:attribute>
           <xsl:attribute name="target">_blank</xsl:attribute>
-          <xsl:attribute name="href">http://www.islandlives.ca/islandora/solr/search/tei.placeName%3A%22<xsl:value-of select="normalize-space(.)"></xsl:value-of>%22+AND+dc.type:collection/-</xsl:attribute>
+          <xsl:attribute name="href"><xsl:value-of select="concat($SEARCHURL, 'tei.placeName%3A')"></xsl:value-of><xsl:value-of select="normalize-space(.)"></xsl:value-of>/-</xsl:attribute>
           <xsl:value-of select="."></xsl:value-of>
         </a>)
 </xsl:otherwise>
@@ -108,7 +112,7 @@
 (<a>
           <xsl:attribute name="class">search orgName</xsl:attribute>
           <xsl:attribute name="target">_blank</xsl:attribute>
-          <xsl:attribute name="href">http://www.islandlives.ca/islandora/solr/search/tei.orgName%3A%22<xsl:value-of select="normalize-space(descendant::tei:choice/tei:reg)"></xsl:value-of>%22+AND+dc.type:collection/-</xsl:attribute>
+          <xsl:attribute name="href"><xsl:value-of select="concat($SEARCHURL, 'tei.orgName%3A')"></xsl:value-of><xsl:value-of select="normalize-space(descendant::tei:choice/tei:reg)"></xsl:value-of>/-</xsl:attribute>
           <xsl:value-of select="descendant::tei:reg"></xsl:value-of>
         </a>)
       </xsl:when>
@@ -116,7 +120,7 @@
 (<a>
           <xsl:attribute name="class">search orgName</xsl:attribute>
           <xsl:attribute name="target">_blank</xsl:attribute>
-          <xsl:attribute name="href">http://www.islandlives.ca/islandora/solr/search/tei.orgName%3A%22<xsl:value-of select="normalize-space(descendant::tei:corr)"></xsl:value-of>%22+AND+dc.type:collection/-</xsl:attribute>
+          <xsl:attribute name="href"><xsl:value-of select="concat($SEARCHURL, 'tei.orgName%3A')"></xsl:value-of><xsl:value-of select="normalize-space(descendant::tei:corr)"></xsl:value-of>/-</xsl:attribute>
           <xsl:value-of select="descendant::tei:corr"></xsl:value-of>
         </a>)
       </xsl:when>
@@ -124,7 +128,7 @@
 (<a>
           <xsl:attribute name="class">search orgName</xsl:attribute>
           <xsl:attribute name="target">_blank</xsl:attribute>
-          <xsl:attribute name="href">http://www.islandlives.ca/islandora/solr/search/tei.orgName%3A%22<xsl:value-of select="normalize-space(descendant::tei:expan)"></xsl:value-of>%22+AND+dc.type:collection/-</xsl:attribute>
+          <xsl:attribute name="href"><xsl:value-of select="concat($SEARCHURL, 'tei.orgName%3A')"></xsl:value-of><xsl:value-of select="normalize-space(descendant::tei:expan)"></xsl:value-of>/-</xsl:attribute>
           <xsl:value-of select="descendant::tei:expan"></xsl:value-of>
         </a>)
       </xsl:when>
@@ -132,7 +136,7 @@
 (<a>
           <xsl:attribute name="class">search orgName</xsl:attribute>
           <xsl:attribute name="target">_blank</xsl:attribute>
-          <xsl:attribute name="href">http://www.islandlives.ca/islandora/solr/search/tei.orgName%3A%22<xsl:value-of select="normalize-space(.)"></xsl:value-of>%22+AND+dc.type:collection/-</xsl:attribute>
+          <xsl:attribute name="href"><xsl:value-of select="concat($SEARCHURL, 'tei.orgName%3A')"></xsl:value-of><xsl:value-of select="normalize-space(.)"></xsl:value-of>/-</xsl:attribute>
           <xsl:value-of select="."></xsl:value-of>
         </a>)
 </xsl:otherwise>
